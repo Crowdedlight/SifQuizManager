@@ -10,7 +10,7 @@ class CommentTableSeeder extends Seeder {
             'name' => 'Frederik Mazur Andersen',
             'email' => 'mazurandersen@gmail.com',
             'password' => "sifmaster",
-            'role' => "QuizMaster"
+            'role' => true
         ));
 
         Comment::create(array(
