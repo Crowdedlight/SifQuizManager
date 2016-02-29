@@ -10,4 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected static function view($content, $layout = 'default')
+    {
+        return view("layouts.$layout")
+            ->nest('navigation', 'parts.navigation')
+            ->nest('footer', 'parts.footer')
+            ->nest('content', $content);
+    }
 }

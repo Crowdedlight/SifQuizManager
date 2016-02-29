@@ -15,8 +15,8 @@ class CreateRoundteamsTable extends Migration
         Schema::create('roundteams', function (Blueprint $table) {
             $table->integer('FK_round')->unsigned();
             $table->integer('FK_team')->unsigned();
-            $table->integer('numPersons')->length(3)->unsigned();
             $table->timestamps();
+            $table->integer('numPersons')->length(3)->unsigned();
             $table->integer('position');
         });
 

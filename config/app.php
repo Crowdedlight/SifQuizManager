@@ -148,6 +148,13 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        Collective\Html\HtmlServiceProvider::class,
+        Watson\BootstrapForm\BootstrapFormServiceProvider::class,
+        Bootstrapper\BootstrapperL5ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
+
+
         /*
          * Application Service Providers...
          */
@@ -201,6 +208,14 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        'Form'     => Collective\Html\FormFacade::class,
+        'HTML'     => Collective\Html\HtmlFacade::class,
+        'BootForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
+
+        'Modal' => 'Bootstrapper\Facades\Modal',
+        'Button' => 'Bootstrapper\Facades\Button',
+        'Badge' => 'Bootstrapper\Facades\Badge',
 
     ],
 

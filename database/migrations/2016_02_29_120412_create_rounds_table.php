@@ -16,6 +16,7 @@ class CreateRoundsTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->integer('numTeams');
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }

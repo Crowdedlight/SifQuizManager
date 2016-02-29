@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +24,11 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
+    Route::post('/auth/login', ['uses' => 'AuthController@login', 'as' => 'auth.login']);
+});
+
+Route::group(['middleware' => ['web', 'auth']], function () {
+    Route::get('/round/new', ['uses' => 'RoundController@index', 'as' => 'round.new']);
+    Route::get('/auth/logout', ['uses' => 'AuthController@logout', 'as' => 'auth.logout']);
 });

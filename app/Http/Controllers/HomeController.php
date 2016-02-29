@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         if(!Auth::check()){
-            return $this->view('home.login');
+            return $this->view('auth.login');
         }
 
         return $this->view('home.index');

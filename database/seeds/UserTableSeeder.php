@@ -1,24 +1,34 @@
 <?php
 
-class CommentTableSeeder extends Seeder {
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
+class UserTableSeeder extends Seeder {
 
     public function run()
     {
         DB::table('users')->delete();
 
-        User::create(array(
-            'name' => 'Frederik Mazur Andersen',
-            'email' => 'mazurandersen@gmail.com',
-            'password' => "sifmaster",
-            'role' => true
-        ));
+        DB::table('users')->insert(
+            [
+                [
+                    'name' => 'Frederik Mazur Andersen',
+                    'username' => 'crowdedlight',
+                    'email' => 'mazurandersen@gmail.com',
+                    'password' => Hash::make("mazur"),
+                    'quizmaster' => true
+                ],
 
-        Comment::create(array(
-            'name' => 'Sif Dummy',
-            'email' => 'sif@sdu.com',
-            'password' => "sif",
-            'role' => "QuizMaster"
-        ));
+                [
+                    'name' => 'Sif Dummy',
+                    'username' => 'sifdummy',
+                    'email' => 'sif@sdu.com',
+                    'password' => Hash::make("sif"),
+                    'quizmaster' => true
+                ]
+            ]
+        );
     }
 
 }
