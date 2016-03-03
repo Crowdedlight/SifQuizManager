@@ -17,7 +17,13 @@ class CreateRoundsTable extends Migration
             $table->string('name')->unique();
             $table->integer('numTeams');
             $table->boolean('active')->default(false);
+            $table->string('status');
             $table->timestamps();
+            $table->integer('FK_userID')->unsigned();
+        });
+
+        Schema::table('rounds', function ($table) {
+            $table->foreign('FK_userID')->references('id')->on('users');
         });
     }
 

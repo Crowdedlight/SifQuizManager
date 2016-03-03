@@ -19,7 +19,7 @@
 
             <?php if(Auth::check()): ?>
                 <p class="navbar-text navbar-right">
-                    Signed in as <strong><?= Auth::user()->username; ?></strong>
+                    Signed in as <strong><?= Auth::user()->name; ?></strong>
                     (<a href="<?=URL::route('auth.logout'); ?>" class="navbar-link">Logout</a>)
                 </p>
             <?php endif; ?>

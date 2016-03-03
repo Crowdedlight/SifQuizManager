@@ -20,6 +20,8 @@ class CreateTeamsTable extends Migration
         });
     }
 
+
+
     /**
      * Reverse the migrations.
      *
