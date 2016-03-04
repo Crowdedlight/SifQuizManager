@@ -21,7 +21,6 @@ if ($round->status == "Finished"):?>
             <span class="pull-right"> Total Teams: <?= $round->numTeams ?> </span>
             <br/>
 
-            <span class="pull-left"></span>
             <span class="pull-right"> Total Persons: <?= $round->roundTeams->sum('numPersons'); ?></span>
         </div>
 
@@ -35,6 +34,7 @@ if ($round->status == "Finished"):?>
                     <th>Name</th>
                     <th>Number of Persons</th>
                     <th class="text-right">Points</th>
+                    <th class="text-right">Update Points</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,6 +45,17 @@ if ($round->status == "Finished"):?>
                         <td><?= $roundTeam->team->name; ?></td>
                         <td><?= $roundTeam->numPersons; ?></td>
                         <td class="text-right"><?= $roundTeam->points; ?></td>
+                        <td class="pull-right">
+                            <?php echo Modal::named('add_points')
+                                ->withTitle('Add points ')
+                                ->withButton(Button::success('Add Points')->setSize('btn-xs'))
+                                ->withBody(view('modals.add_points')
+                                    ->with('id', $round->id)
+                                    ->with('FK_round', $roundTeam->FK_round)
+                                    ->with('FK_team', $roundTeam->FK_team)
+                                    ->render());
+                            ?>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

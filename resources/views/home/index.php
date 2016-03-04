@@ -53,7 +53,7 @@
                         <span class="label label-success" data-toggle="tooltip" data-placement="top" title="Finished">Running</span>
                     <?php endif; ?>
 
-                    <?php if ($round->where('status', 'finished')->count() == 1): ?>
+                    <?php if ($round->where('status', 'Finished')->count() > 0): ?>
                         <span class="label label-danger" data-toggle="tooltip" data-placement="top" title="Finished">Finished</span>
                     <?php endif; ?>
 

@@ -94,6 +94,30 @@ class RoundController extends Controller
         return redirect()->route('round.single', ['id' => $id]);
     }
 
+    public function addPoints(Request $request, $id, $FK_round, $FK_team)
+    {
+        //Find entry in roundteams
+        $roundTeam = RoundTeams::where('FK_round', $FK_round)->where('FK_team', $FK_team)->first();
+
+        if (is_null($roundTeam))
+            return redirect()->route('round.single', ['id' => $id]);
+
+        $points = $request->input('points');
+        if ($points >= 0)
+        {
+            //Increment
+            $roundTeam->increment('points', $points);
+        }
+        else
+        {
+            $roundTeam->decrement('points', $points);
+        }
+        $roundTeam->save();
+
+        return redirect()->route('round.single', ['id' => $id]);
+
+    }
+
 
     public function close(Requests\CloseSheetRequest $request, $id)
     {
