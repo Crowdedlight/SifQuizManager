@@ -30,6 +30,12 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('/round/create', ['uses' => 'RoundController@create', 'as' => 'round.create']);
+
+    Route::get('/round/', ['uses' => 'RoundController@index', 'as' => 'round.all']);
+
     Route::get('/round/{id}', ['uses' => 'RoundController@single', 'as' => 'round.single']);
+    Route::post('/round/{id}/add', ['uses' => 'RoundController@addTeam', 'as' => 'round.add_team']);
+    Route::post('/round/{id}/close', ['uses' => 'RoundController@close', 'as' => 'round.close']);
+
     Route::get('/auth/logout', ['uses' => 'AuthController@logout', 'as' => 'auth.logout']);
 });

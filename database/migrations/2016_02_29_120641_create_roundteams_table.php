@@ -18,6 +18,9 @@ class CreateRoundteamsTable extends Migration
             $table->timestamps();
             $table->integer('numPersons')->length(3)->unsigned();
             $table->integer('position');
+            $table->double('points');
+
+            $table->primary(['FK_round', 'FK_team']);
         });
 
         Schema::table('roundteams', function ($table) {

@@ -12,7 +12,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="<?= URL::route('home') ?>">Home</a>
+                    <a href="<?= URL::route('round.all') ?>">Rounds</a>
                 </li>
 
             </ul>

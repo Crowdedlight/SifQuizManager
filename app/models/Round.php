@@ -13,4 +13,14 @@ class Round extends Model
         return $this->hasOne('App\Models\User', 'id', 'FK_userID');
     }
 
+    public function roundTeams()
+    {
+        return $this->hasMany('App\Models\RoundTeams', 'FK_round', 'id');
+    }
+
+    public function comment()
+    {
+        return $this->hasMany('App\Models\Comment', 'FK_round', 'id');
+    }
+
 }
