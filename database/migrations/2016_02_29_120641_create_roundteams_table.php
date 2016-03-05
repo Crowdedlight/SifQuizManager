@@ -13,6 +13,7 @@ class CreateRoundteamsTable extends Migration
     public function up()
     {
         Schema::create('roundteams', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('FK_round')->unsigned();
             $table->integer('FK_team')->unsigned();
             $table->timestamps();
@@ -20,7 +21,6 @@ class CreateRoundteamsTable extends Migration
             $table->integer('position');
             $table->double('points');
 
-            $table->primary(['FK_round', 'FK_team']);
         });
 
         Schema::table('roundteams', function ($table) {

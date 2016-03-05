@@ -34,28 +34,32 @@ if ($round->status == "Finished"):?>
                     <th>Name</th>
                     <th>Number of Persons</th>
                     <th class="text-right">Points</th>
-                    <th class="text-right">Update Points</th>
+                    <?php if ($round->status != 'Finished'): ?>
+                        <th class="text-right">Update Points</th>
+                    <?php endif; ?>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($round->roundTeams()->orderBy('points', 'ASC')->get() as $roundTeam):
+                <?php foreach ($round->roundTeams()->orderBy('points', 'DESC')->get() as $roundTeam):
                     ?>
                     <tr>
                         <td><?= $roundTeam->position ?></td>
                         <td><?= $roundTeam->team->name; ?></td>
                         <td><?= $roundTeam->numPersons; ?></td>
                         <td class="text-right"><?= $roundTeam->points; ?></td>
-                        <td class="pull-right">
-                            <?php echo Modal::named('add_points')
-                                ->withTitle('Add points ')
-                                ->withButton(Button::success('Add Points')->setSize('btn-xs'))
-                                ->withBody(view('modals.add_points')
-                                    ->with('id', $round->id)
-                                    ->with('FK_round', $roundTeam->FK_round)
-                                    ->with('FK_team', $roundTeam->FK_team)
-                                    ->render());
-                            ?>
-                        </td>
+
+                        <?php if ($round->status != 'Finished'): ?>
+                            <td class="pull-right">
+                                <?php echo Modal::named('add_points' . $roundTeam->FK_team)
+                                    ->withTitle('Add points')
+                                    ->withButton(Button::success('Add Points')->setSize('btn-xs'))
+                                    ->withBody(view('modals.add_points')
+                                        ->with('id', $round->id)
+                                        ->with('FK_team', $roundTeam->FK_team)
+                                        ->render());
+                                ?>
+                            </td>
+                        <?php endif; ?>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

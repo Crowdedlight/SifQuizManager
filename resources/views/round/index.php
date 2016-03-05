@@ -27,7 +27,7 @@
                         </span>
             </td>
             <td>
-                    <span class="glyphicon <?= !($round->status == "finished") ? 'glyphicon-remove' : 'glyphicon-ok' ?>"
+                    <span class="glyphicon <?= !($round->status == "Finished") ? 'glyphicon-remove' : 'glyphicon-ok' ?>"
                           aria-hidden="true">
 
                     </span>

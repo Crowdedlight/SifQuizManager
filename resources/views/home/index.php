@@ -49,11 +49,11 @@
                         <span class="label label-info" data-toggle="tooltip" data-placement="top" title="active">Active</span>
                     <?php endif; ?>
 
-                    <?php if ($round->where('status', 'running')->count() == 1): ?>
-                        <span class="label label-success" data-toggle="tooltip" data-placement="top" title="Finished">Running</span>
+                    <?php if ($round->status != "Finished"): ?>
+                        <span class="label label-success" data-toggle="tooltip" data-placement="top" title="Running">Running</span>
                     <?php endif; ?>
 
-                    <?php if ($round->where('status', 'Finished')->count() > 0): ?>
+                    <?php if ($round->status == "Finished"): ?>
                         <span class="label label-danger" data-toggle="tooltip" data-placement="top" title="Finished">Finished</span>
                     <?php endif; ?>
 
