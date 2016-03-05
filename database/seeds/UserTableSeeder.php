@@ -22,9 +22,9 @@ class UserTableSeeder extends Seeder {
 
                 [
                     'name' => 'Sif Dummy',
-                    'username' => 'sifdummy',
+                    'username' => 'sif',
                     'email' => 'sif@sdu.com',
-                    'password' => Hash::make("sif"),
+                    'password' => Hash::make("sifquiz"),
                     'quizmaster' => true
                 ]
             ]
