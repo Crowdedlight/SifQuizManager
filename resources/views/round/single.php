@@ -66,8 +66,8 @@ if ($round->status == "Finished"):?>
             </table>
         </div>
 
-        <?php if (count($round->comments) > 0): ?>
-        <?php foreach ($round->comments->reverse() as $comment): ?>
+        <?php if (count($round->comment) > 0): ?>
+        <?php foreach ($round->comment->reverse() as $comment): ?>
         <?php if ($comment->type == 'round_info'): ?>
         <div class="alert alert-info" role="alert">
             <?php elseif ($comment->type == 'round_log'): ?>
