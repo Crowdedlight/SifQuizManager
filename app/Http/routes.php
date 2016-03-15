@@ -40,3 +40,13 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
     Route::get('/auth/logout', ['uses' => 'AuthController@logout', 'as' => 'auth.logout']);
 });
+
+Route::group(['middleware' => ['web', 'quizmaster']], function () {
+    Route::get('/admin', ['uses' => 'AdminController@index', 'as' => 'admin.index']);
+    Route::post('/admin/api/users', ['uses' => 'AdminController@ajaxUsers', 'as' => 'admin.api_users']);
+    Route::get('/admin/user/info/{id}', ['uses' => 'AdminController@userInfo', 'as' => 'admin.user_info']);
+    Route::post('/admin/user/promote/{id}', ['uses' => 'AdminController@promoteUser', 'as' => 'admin.promote_user']);
+    Route::post('/admin/user/demote/{id}', ['uses' => 'AdminController@demoteUser', 'as' => 'admin.demote_user']);
+    Route::post('/admin/user/add', ['uses' => 'AdminController@AddUser', 'as' => 'admin.add_user']);
+    Route::post('/admin/user/delete/{id}', ['uses' => 'AdminController@DeleteUser', 'as' => 'admin.delete_user']);
+});

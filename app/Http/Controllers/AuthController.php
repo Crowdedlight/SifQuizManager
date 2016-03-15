@@ -26,7 +26,7 @@ class AuthController extends Controller
      * @var string
      */
 
-    protected $guard = 'admin';
+    protected $guard = 'quizmaster';
 
     public function login(Request $request)
     {
