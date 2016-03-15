@@ -30,8 +30,15 @@ class RoundController extends Controller
         $round->numTeams    = 0;
         $round->active      = true;
         $round->status      = 'running';
-        $round->FK_userID  = Auth::user()->id;
+        $round->FK_userID   = Auth::user()->id;
         $round->save();
+
+        $comment            = new Comment();
+        $comment->FK_user   = Auth::user()->id;
+        $comment->type      = 'round_info';
+        $comment->comment   = 'Round Opened';
+        $comment->FK_round  = $round->id;
+        $comment->save();
 
         return redirect()->route('home');
     }
