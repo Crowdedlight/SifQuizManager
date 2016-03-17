@@ -133,6 +133,23 @@ class RoundController extends Controller
 
     }
 
+    public function AddComment(Request $request, $id)
+    {
+        $round = Round::find($id);
+
+        if (is_null($round))
+            return redirect()->route('round.single', ['id' => $id]);
+
+        $comment            = new Comment();
+        $comment->FK_user   = Auth::user()->id;
+        $comment->type      = 'round_info';
+        $comment->comment   = $request::input('comment');
+        $comment->FK_round  = $round->id;
+        $comment->save();
+
+        return redirect()->route('round.single', ['id' => $id]);
+    }
+
 
     public function close(Requests\CloseSheetRequest $request, $id)
     {

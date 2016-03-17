@@ -106,5 +106,13 @@ if ($round->status == "Finished"):?>
                             ?>
                         </div>
                     <?php endif; ?>
+
+                    <div class="jumbotron">
+                        <?php echo Modal::named('add_comment')
+                            ->withTitle('Add Comment')
+                            ->withButton(Button::info('Add Comment')->block())
+                            ->withBody(view('modals.add_comment')->with('id', $round->id)->render());
+                        ?>
+                    </div>
                 </div>
             </div>
