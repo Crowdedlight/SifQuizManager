@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb7e101-b226-4392-8c49-3476f352a289" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/modals/add_comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RoundController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoundController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modals/admin_add_user.php" afterPath="$PROJECT_DIR$/resources/views/modals/admin_add_user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/round/single.php" afterPath="$PROJECT_DIR$/resources/views/round/single.php" />
     </list>
     <ignored path="SifQuizManager.iws" />
@@ -59,21 +54,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="single.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="single.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/round/single.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.384615">
-              <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.15246637">
+              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+              <folding>
+                <marker date="1458256190150" expanded="true" signature="1314:1631" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="1390:1631" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="1414:1631" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="1435:1631" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="1846:1908" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="1996:2318" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="2385:2442" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="3365:3410" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="3485:3534" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="3618:3894" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="3720:3894" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="4091:4142" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="4224:4310" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="4826:4879" placeholder="..." />
+                <marker date="1458256190150" expanded="true" signature="5280:5329" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoundController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoundController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoundController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoundController.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/round/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82847536">
-              <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+            <state vertical-scroll-proportion="-29.423077">
+              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -104,16 +125,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.65384614">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_delete_user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/modals/admin_delete_user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -195,8 +206,8 @@
         <option value="$PROJECT_DIR$/resources/views/modals/admin_add_user.php" />
         <option value="$PROJECT_DIR$/resources/views/modals/add_comment.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/round/single.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoundController.php" />
+        <option value="$PROJECT_DIR$/resources/views/round/single.php" />
       </list>
     </option>
   </component>
@@ -970,13 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/round/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.153847">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8766816">
@@ -989,7 +993,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
-            <element signature="e#39#59#0#PHP" expanded="true" />
+            <element signature="e#39#59#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1108,19 +1112,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/round/single.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/round/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.384615">
-          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+        <state vertical-scroll-proportion="-29.423077">
+          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoundController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82847536">
-          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/round/single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15246637">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding>
+            <marker date="1458256190150" expanded="true" signature="1314:1631" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="1390:1631" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="1414:1631" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="1435:1631" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="1846:1908" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="1996:2318" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="2385:2442" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="3365:3410" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="3485:3534" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="3618:3894" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="3720:3894" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="4091:4142" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="4224:4310" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="4826:4879" placeholder="..." />
+            <marker date="1458256190150" expanded="true" signature="5280:5329" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
