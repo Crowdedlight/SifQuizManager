@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb7e101-b226-4392-8c49-3476f352a289" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/round/single.php" afterPath="$PROJECT_DIR$/resources/views/round/single.php" />
     </list>
     <ignored path="SifQuizManager.iws" />
@@ -47,6 +48,7 @@
       <file leaf-file-name="single.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/round/single.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.68609864">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
@@ -65,6 +67,28 @@
                 <marker date="1458259647663" expanded="true" signature="4416:4502" placeholder="..." />
                 <marker date="1458259647663" expanded="true" signature="5018:5071" placeholder="..." />
                 <marker date="1458259647663" expanded="true" signature="5472:5521" placeholder="..." />
+=======
+            <state vertical-scroll-proportion="0.514574">
+              <caret line="27" column="137" selection-start-line="27" selection-start-column="137" selection-end-line="27" selection-end-column="137" />
+              <folding>
+                <marker date="1458260657531" expanded="true" signature="1510:1854" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="1586:1854" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="1610:1854" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="1631:1781" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="1631:1854" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="2042:2104" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="2192:2416" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="2192:2514" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="2581:2638" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="3561:3606" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="3681:3730" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="3814:4090" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="3916:4090" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="4287:4338" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="4420:4506" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="5022:5075" placeholder="..." />
+                <marker date="1458260657531" expanded="true" signature="5476:5525" placeholder="..." />
+>>>>>>> e1edd0c... fixed issue with compareing strings with ints
               </folding>
             </state>
           </provider>
@@ -1119,6 +1143,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/round/single.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.68609864">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
@@ -1137,6 +1162,28 @@
             <marker date="1458259647663" expanded="true" signature="4416:4502" placeholder="..." />
             <marker date="1458259647663" expanded="true" signature="5018:5071" placeholder="..." />
             <marker date="1458259647663" expanded="true" signature="5472:5521" placeholder="..." />
+=======
+        <state vertical-scroll-proportion="0.514574">
+          <caret line="27" column="137" selection-start-line="27" selection-start-column="137" selection-end-line="27" selection-end-column="137" />
+          <folding>
+            <marker date="1458260657531" expanded="true" signature="1510:1854" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="1586:1854" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="1610:1854" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="1631:1781" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="1631:1854" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="2042:2104" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="2192:2416" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="2192:2514" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="2581:2638" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="3561:3606" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="3681:3730" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="3814:4090" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="3916:4090" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="4287:4338" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="4420:4506" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="5022:5075" placeholder="..." />
+            <marker date="1458260657531" expanded="true" signature="5476:5525" placeholder="..." />
+>>>>>>> e1edd0c... fixed issue with compareing strings with ints
           </folding>
         </state>
       </provider>
