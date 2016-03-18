@@ -24,10 +24,15 @@ if ($round->status == "Finished"):?>
             <span class="pull-right"> Total Persons: <?= $round->roundTeams->sum('numPersons'); ?></span>
             <br/>
 
-            <span class="pull-right"> Number of Beers (Prizes): <?= (30 + ($round->roundTeams->where('position', 2)->sum('numPersons')) + ($round->roundTeams->where('position', 3)->sum('numPersons')));  ?>   </span>
+            <?php
+            $beerPrize = 30 + $round->roundTeams->where('position', 2)->first()->numPersons + $round->roundTeams->where('position', 3)->first()->numPersons;
+            $beerTotal = $round->roundTeams->sum('numPersons') + $beerPrize;
+            ?>
+
+            <span class="pull-right"> Number of Beers (Prizes): <?= $beerPrize;  ?>   </span>
             <br/>
 
-            <span class="pull-right"> Total Beers: <?= ($round->roundTeams->sum('numPersons') + 30 + ($round->roundTeams->where('position', 2)->sum('numPersons')) + ($round->roundTeams->where('position', 3)->sum('numPersons')));  ?>   </span>
+            <span class="pull-right"> Total Beers: <?= $beerTotal;  ?>   </span>
         </div>
 
         <div class="jumbotron">
