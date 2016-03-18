@@ -25,11 +25,8 @@ if ($round->status == "Finished"):?>
             <br/>
 
             <?php
-            dd($round->roundTeams->where('position', "2"));
-            //$beerPrize = 30 + $round->roundTeams->where('position', 2)->first()->numPersons + $round->roundTeams->where('position', 3)->first()->numPersons;
-            //$beerTotal = $round->roundTeams->sum('numPersons') + $beerPrize;
-            $beerPrize = 0;
-            $beerTotal = 0;
+            $beerPrize = 30 + $round->roundTeams->where('position', "2")->first()->numPersons + $round->roundTeams->where('position', "3")->first()->numPersons;
+            $beerTotal = $round->roundTeams->sum('numPersons') + $beerPrize;
             ?>
 
             <span class="pull-right"> Number of Beers (Prizes): <?= $beerPrize;  ?>   </span>
