@@ -51,6 +51,8 @@ class RoundController extends Controller
         }
 
         $round = Round::find($id);
+        //Eager Loading
+        $round->load('roundTeams');
 
         if (is_null($round)) {
             return redirect()->route('rounds.all');
