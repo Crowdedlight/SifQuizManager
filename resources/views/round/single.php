@@ -47,7 +47,7 @@ if ($round->status == "Finished"):?>
 
             if ($position3)
             {
-                $position3 = $round->roundTeams()->where('position', 2)->first()->numPersons;
+                $position3 = $round->roundTeams()->where('position', 3)->first()->numPersons;
             } else
             {
                 $position3 = 0;
