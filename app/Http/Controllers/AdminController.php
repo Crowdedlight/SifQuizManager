@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -26,8 +27,9 @@ class AdminController extends Controller
         $user = User::find($id);
         return view('modals.admin_user_info')->with('user', $user);
     }
-    public function promoteUser(Request $request, $id){
-        if($request->input('_action') == 'promote_user'){
+    public function promoteUser(Request $request, $id)
+    {
+        if ($request->input('_action') == 'promote_user') {
             $user = User::find($id);
             $user->quizmaster = true;
             $user->timestamps = false; //don't update the timestamps
@@ -35,8 +37,9 @@ class AdminController extends Controller
         }
         return redirect()->route('admin.index');
     }
-    public function demoteUser(Request $request, $id){
-        if($request->input('_action') == 'demote_user'){
+    public function demoteUser(Request $request, $id)
+    {
+        if ($request->input('_action') == 'demote_user') {
             $user = User::find($id);
             $user->quizmaster = false;
             $user->timestamps = false; //don't update the timestamps
@@ -45,9 +48,9 @@ class AdminController extends Controller
         return redirect()->route('admin.index');
     }
 
-    public function DeleteUser(Request $request, $id)
+    public function deleteUser(Request $request, $id)
     {
-        if($request->input('_action') == 'delete_user'){
+        if ($request->input('_action') == 'delete_user') {
             $user = User::find($id);
             $user->delete();
         }

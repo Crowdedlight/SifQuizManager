@@ -61,15 +61,15 @@ class RoundController extends Controller
         view()->share('round', $round);
 
         return $this->view('round.single');
-
     }
 
 
     public function addTeam(Requests\AddTeamRequest $request, $id)
     {
         $round = Round::find($id);
-        if (is_null($round))
+        if (is_null($round)) {
             return redirect()->route('round.single', ['id' => $id]);
+        }
 
         //Get input
         $teamname = $request->input('TeamName');
@@ -110,8 +110,9 @@ class RoundController extends Controller
         $round = Round::find($id);
         $roundTeams = $round->roundTeams()->where('FK_team', $FK_team)->first();
 
-        if (is_null($roundTeams))
+        if (is_null($roundTeams)) {
             return redirect()->route('round.single', ['id' => $id]);
+        }
 
         $addpoints = $request::input('points');
         $currentPoints = $roundTeams->points;
@@ -123,8 +124,7 @@ class RoundController extends Controller
 
         //Update Position
         $position = 1;
-        foreach ($round->roundTeams()->orderBy('points', 'DESC')->get() as $roundTeam)
-        {
+        foreach ($round->roundTeams()->orderBy('points', 'DESC')->get() as $roundTeam) {
             $roundTeam->position = $position;
             $roundTeam->save();
 
@@ -133,15 +133,15 @@ class RoundController extends Controller
 
 
         return redirect()->route('round.single', ['id' => $id]);
-
     }
 
-    public function AddComment(Request $request, $id)
+    public function addComment(Request $request, $id)
     {
         $round = Round::find($id);
 
-        if (is_null($round))
+        if (is_null($round)) {
             return redirect()->route('round.single', ['id' => $id]);
+        }
 
         $comment            = new Comment();
         $comment->FK_user   = Auth::user()->id;
@@ -158,8 +158,9 @@ class RoundController extends Controller
     {
         $round = Round::find($id);
 
-        if (is_null($round))
+        if (is_null($round)) {
             return redirect()->route('round.single', ['id' => $id]);
+        }
 
         $round->status = 'Finished';
         $round->active   = false;
