@@ -131,6 +131,7 @@ if ($round->status == "Finished"):?>
                             <?php
                                 echo Modal::named('add_team')
                                     ->withTitle('Add Team')
+                                    ->withAttributes(['data-backdrop' => 'static', 'data-keyboard' => 'true'])
                                     ->withButton(Button::withValue('Add Team')->block())
                                     ->withBody(view('modals.add_team')->with('id', $round->id)->render());
                             ?>
@@ -156,3 +157,25 @@ if ($round->status == "Finished"):?>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+
+        //Price per group member
+        var personPrice = 15;
+
+        //Auto update admission based on groupmembers
+        $(document).on("keyup", "#numPersons", function () {
+            var num = $("#numPersons").val();
+            var admission = num * personPrice;
+
+            $(".admissionUpdate").text(admission);
+        });
+    });
+</script>
+@stop
+

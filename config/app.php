@@ -214,6 +214,7 @@ return [
         'Modal' => 'Bootstrapper\Facades\Modal',
         'Button' => 'Bootstrapper\Facades\Button',
         'Badge' => 'Bootstrapper\Facades\Badge',
+        'Icon' => 'Bootstrapper\Facades\Icon'
 
     ],
 
