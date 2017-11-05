@@ -38,6 +38,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('/round/{id}/close', ['uses' => 'RoundController@close', 'as' => 'round.close']);
     Route::post('/round/{id}/{FK_team}/addPoints', ['uses' => 'RoundController@addPoints', 'as' => 'round.add_points']);
     Route::post('/round/{id}/addComment', ['uses' => 'RoundController@addComment', 'as' => 'round.add_comment']);
+    Route::post('/roundTeam/incrementTeam', ['uses' => 'RoundController@updatePersonsInTeam', 'as' => 'round.update.numPersons']);
 
     Route::get('/auth/logout', ['uses' => 'AuthController@logout', 'as' => 'auth.logout']);
 });

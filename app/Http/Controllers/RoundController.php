@@ -21,7 +21,7 @@ class RoundController extends Controller
 
         view()->share('rounds', $rounds);
 
-        return $this->view('round.index');
+        return view('round.index');
     }
 
     public function create(Requests\CreateRoundRequest $request)
@@ -60,7 +60,7 @@ class RoundController extends Controller
 
         view()->share('round', $round);
 
-        return $this->view('round.single');
+        return view('round.single');
     }
 
 
@@ -172,5 +172,25 @@ class RoundController extends Controller
         $comment->FK_round  = $round->id;
         $comment->save();
         return redirect()->route('round.single', ['id' => $id]);
+    }
+
+    public function updatePersonsInTeam(Request $request)
+    {
+        $roundteamID = Input::get('roundteamID');
+        $action = Input::get('action');
+        $roundteam = null;
+        try {
+            $roundteam = RoundTeams::where('id', $roundteamID)->first();
+
+            if ($action == "increment") {
+                $roundteam->increment('numPersons');
+            } else {
+                $roundteam->decrement('numPersons');
+            }
+        } catch (\Exception $ex) {
+            //return error maybe...
+        }
+
+        return response()->json($roundteam);
     }
 }

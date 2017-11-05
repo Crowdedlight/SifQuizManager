@@ -13,12 +13,12 @@ class HomeController extends Controller
     public function index()
     {
         if (!Auth::check()) {
-            return $this->view('auth.login');
+            return view('auth.login');
         }
 
         $rounds = Round::where('active', true)->get();
-        View()->share('rounds', $rounds);
+        view()->share('rounds', $rounds);
 
-        return $this->view('home.index');
+        return view('home.index');
     }
 }
