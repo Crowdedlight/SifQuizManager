@@ -1,3 +1,7 @@
+@extends('layout.master')
+
+@section('content')
+
 <div class="row">
     <div class="col-md-12">
         <div class="jumbotron">
@@ -5,11 +9,10 @@
 
             <p>Here's a text with some explanations how to use this app.</p>
 
-            <?php
-            echo Modal::named('new_round')
+            <?php echo Modal::named('new_round')
                 ->withTitle('Add New Round')
                 ->withButton(Button::success('Add New Round')->setSize('btn-md'))
-                ->withBody(view('modals.new_round')->render());
+                ->withBody(view('modals.new_round')->render())
             ?>
         </div>
     </div>
@@ -29,37 +32,39 @@
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($rounds as $round): ?>
+        @foreach ($rounds as $round)
             <tr>
-                <th><a href="<?= route('round.single', [$round->id]); ?>"><?= $round->name; ?></a></th>
-                <td><?= $round->numTeams ?></td>
+                <th><a href="{{ route('round.single', [$round->id]) }}">{{ $round->name }}</a></th>
+                <td>{{ $round->numTeams }}</td>
                 <td>
-                        <span data-toggle="tooltip" data-placement="top" title="<?=$round->updated_at ?>">
-                            <?= Carbon\Carbon::parse($round->updated_at)->diffForHumans() ?>
+                        <span data-toggle="tooltip" data-placement="top" title="{{$round->updated_at }}">
+                           {{ Carbon\Carbon::parse($round->updated_at)->diffForHumans() }}
                         </span>
                 </td>
-                <td><?= $round->user->name ?></td>
+                <td>{{ $round->user->name }}</td>
                 <td>
-                        <span data-toggle="tooltip" data-placement="top" title="<?=$round->created_at ?>">
-                            <?= Carbon\Carbon::parse($round->created_at)->diffForHumans() ?>
+                        <span data-toggle="tooltip" data-placement="top" title="{{$round->created_at }}">
+                            {{ Carbon\Carbon::parse($round->created_at)->diffForHumans() }}
                         </span>
                 </td>
                 <td>
-                    <?php if ($round->where('active', true)): ?>
+                    @if ($round->where('active', true))
                         <span class="label label-info" data-toggle="tooltip" data-placement="top" title="active">Active</span>
-                    <?php endif; ?>
+                    @endif
 
-                    <?php if ($round->status != "Finished"): ?>
+                    @if ($round->status != "Finished")
                         <span class="label label-success" data-toggle="tooltip" data-placement="top" title="Running">Running</span>
-                    <?php endif; ?>
+                    @endif
 
-                    <?php if ($round->status == "Finished"): ?>
+                    @if ($round->status == "Finished")
                         <span class="label label-danger" data-toggle="tooltip" data-placement="top" title="Finished">Finished</span>
-                    <?php endif; ?>
+                    @endif
 
                 </td>
             </tr>
-        <?php endforeach; ?>
+       @endforeach
         </tbody>
     </table>
 </div>
+
+@endsection

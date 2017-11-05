@@ -15,7 +15,7 @@ class AdminController extends Controller
     {
         $users = User::all();
         view()->share('users', $users);
-        return $this->view('admin.users');
+        return view('admin.users');
     }
     public function ajaxUsers(Request $request)
     {
