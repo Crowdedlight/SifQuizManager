@@ -90,9 +90,15 @@
                         <td>{{ $roundTeam->team->name }}</td>
                         <td>
                             <div class="center-block">
-                                <button type="button" class="btn btn-link changeNumPersons" data-action="decrement" data-id="{{ $roundTeam->id }}"><span class="glyphicon glyphicon-minus"></span> </button>
+                                @if (!($round->status == 'Finished'))
+                                    <button type="button" class="btn btn-link changeNumPersons" data-action="decrement" data-id="{{ $roundTeam->id }}"><span class="glyphicon glyphicon-minus"></span> </button>
+                                @endif
+
                                 <span class="textPersons" data-id="{{ $roundTeam->id }}">{{ $roundTeam->numPersons }}</span>
-                                <button type="button" class="btn btn-link changeNumPersons" data-action="increment" data-id="{{ $roundTeam->id }}"><span class="glyphicon glyphicon-plus"></span> </button>
+
+                                @if (!($round->status == 'Finished'))
+                                    <button type="button" class="btn btn-link changeNumPersons" data-action="increment" data-id="{{ $roundTeam->id }}"><span class="glyphicon glyphicon-plus"></span> </button>
+                                @endif
                             </div>
                         </td>
                         <td class="text-right">{{ $roundTeam->points }}</td>
