@@ -44,6 +44,45 @@ class RoundController extends Controller
         return redirect()->route('home');
     }
 
+    public function editName(Requests\EditRoundNameRequest $request, $id)
+    {
+        $name = $request->input('round_name');
+        $round = Round::find($id);
+        $round->name        = $name;
+        $round->save();
+
+        $comment            = new Comment();
+        $comment->FK_user   = Auth::user()->id;
+        $comment->type      = 'round_info';
+        $comment->comment   = 'Round Name changed to: ' . $name;
+        $comment->FK_round  = $round->id;
+        $comment->save();
+
+        return redirect()->route('round.all');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $round = Round::find($id);
+        // check if round could be found
+        if (is_null($round)) {
+            return redirect()->route('round.all');
+        }
+
+        // save comment for deletion as we do soft deletes
+        $comment            = new Comment();
+        $comment->FK_user   = Auth::user()->id;
+        $comment->type      = 'round_danger';
+        $comment->comment   = 'Round Deleted';
+        $comment->FK_round  = $round->id;
+        $comment->save();
+
+        // otherwise delete round
+        $round->delete();
+
+        return redirect()->route('round.all');
+    }
+
     public function single(Request $request, $id)
     {
         if (!is_numeric($id)) {

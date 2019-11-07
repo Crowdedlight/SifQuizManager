@@ -30,6 +30,8 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('/round/create', ['uses' => 'RoundController@create', 'as' => 'round.create']);
+    Route::post('/round/{id}/edit', ['uses' => 'RoundController@editName', 'as' => 'round.editname']);
+    Route::post('/round/{id}/delete', ['uses' => 'RoundController@delete', 'as' => 'round.delete']);
 
     Route::get('/round/', ['uses' => 'RoundController@index', 'as' => 'round.all']);
 
