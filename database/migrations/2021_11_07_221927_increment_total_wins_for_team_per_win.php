@@ -20,7 +20,7 @@ class IncrementTotalWinsForTeamPerWin extends Migration
 
         foreach ($allRounds as $round) {
             // get winning team
-            $winningTeam = RoundTeams::where('FK_round', $round->id)->where('position', 1)->first();
+            $winningTeam = RoundTeams::where('FK_round', $round->id)->where('position', 1)->first()->team();
             $winningTeam->TotalWins = $winningTeam->TotalWins + 1;
             $winningTeam->save();
         };
@@ -33,11 +33,6 @@ class IncrementTotalWinsForTeamPerWin extends Migration
      */
     public function down()
     {
-        // just set all totalWins to 0 for all teams, as we haven't counted them so far.
-        Team::all()->each(function ($item, $key) {
-            // get winning team
-            $item->TotalWins = 0;
-            $item->save();
-        });
+        // nothing
     }
 }

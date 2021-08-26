@@ -214,7 +214,7 @@ class RoundController extends Controller
         $comment->save();
 
         // add win to winning team
-        $winningTeam = RoundTeams::where('FK_round', $round->id)->where('position', 1)->first();
+        $winningTeam = RoundTeams::where('FK_round', $round->id)->where('position', 1)->first()->team();
         $winningTeam->TotalWins = $winningTeam->TotalWins + 1;
         $winningTeam->save();
 
