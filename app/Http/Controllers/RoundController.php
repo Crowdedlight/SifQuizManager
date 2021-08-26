@@ -201,15 +201,23 @@ class RoundController extends Controller
             return redirect()->route('round.single', ['id' => $id]);
         }
 
+        // update round
         $round->status = 'Finished';
         $round->active   = false;
         $round->save();
+
         $comment            = new Comment();
         $comment->FK_user   = Auth::user()->id;
         $comment->type      = 'round_important';
         $comment->comment   = 'Closed with comment: ' . $request->input('comment');
         $comment->FK_round  = $round->id;
         $comment->save();
+
+        // add win to winning team
+        $winningTeam = RoundTeams::where('FK_round', $round->id)->where('position', 1)->first();
+        $winningTeam->TotalWins = $winningTeam->TotalWins + 1;
+        $winningTeam->save();
+
         return redirect()->route('round.single', ['id' => $id]);
     }
 
