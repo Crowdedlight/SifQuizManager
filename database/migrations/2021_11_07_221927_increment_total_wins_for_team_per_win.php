@@ -20,8 +20,10 @@ class IncrementTotalWinsForTeamPerWin extends Migration
 
         foreach ($allRounds as $round) {
             // get winning team
-            $winningTeamID = DB::table('roundteams')->where('FK_round', $round->id)->where('position', 1)->first()->id;
-            DB::table('teams')->find($winningTeamID)->increment('TotalWins');
+            $winningTeam = DB::table('roundteams')->where('FK_round', $round->id)->where('position', 1)->first();
+            $winningTeamID = $winningTeam->id;
+            $wins = $winningTeam->TotalWins + 1;
+            DB::table('teams')->find($winningTeamID)->update(['TotalWins' => $wins]);
         };
     }
 
