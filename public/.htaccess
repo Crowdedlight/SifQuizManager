@@ -17,4 +17,9 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    #force https
+    RewriteCond %{HTTP_HOST} ^sifquiz\.crow\.ovh [NC]
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://www.sifquiz.crow.ovh/$1 [R,L]
 </IfModule>
