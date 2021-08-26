@@ -14,7 +14,7 @@ class Round extends Model
 
     public function user()
     {
-        return $this->hasOne('App\Models\User', 'id', 'FK_userID');
+        return $this->hasOne('App\Models\User', 'id', 'FK_userID')->withTrashed();
     }
 
     public function roundTeams()

@@ -15,6 +15,6 @@ class Comment extends Model
 
     public function user()
     {
-        return $this->hasOne('App\Models\User', 'id', 'FK_user');
+        return $this->hasOne('App\Models\User', 'id', 'FK_user')->withTrashed();
     }
 }
