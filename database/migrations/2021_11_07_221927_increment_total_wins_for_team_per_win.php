@@ -6,7 +6,7 @@ use App\Models\Round;
 use App\Models\RoundTeams;
 use App\Models\Team;
 
-class IncrementTotalWinsForTeamPerWim extends Migration
+class IncrementTotalWinsForTeamPerWin extends Migration
 {
     /**
      * Run the migrations.
