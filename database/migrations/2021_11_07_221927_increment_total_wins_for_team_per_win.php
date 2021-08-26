@@ -16,12 +16,14 @@ class IncrementTotalWinsForTeamPerWin extends Migration
     public function up()
     {
         // get all rounds
-        Round::all()->each(function ($item, $key) {
+        $allRounds = Round::all();
+
+        foreach ($allRounds as $round) {
             // get winning team
-            $winningTeam = RoundTeams::where('FK_round', $item->id)->where('position', 1)->first();
+            $winningTeam = RoundTeams::where('FK_round', $round->id)->where('position', 1)->first();
             $winningTeam->TotalWins = $winningTeam->TotalWins + 1;
             $winningTeam->save();
-        });
+        };
     }
 
     /**
