@@ -14,15 +14,18 @@ class IncrementTotalWinsForTeamPerWin extends Migration
     {
         // get all rounds
         $allRounds = DB::table('rounds')->whereNull('deleted_at')->get();
-        print(count($allRounds));
 
         foreach ($allRounds as $round) {
             // get winning team
-            $winningTeamID = DB::table('roundteams')->where('FK_round', $round->id)->where('position', 1)->limit(1)->id;
+            $winningTeamID = DB::table('roundteams')->where('FK_round', $round->id)->where('position', 1)->first()->FK_team;
             $winTeam = DB::table('teams')->where('id', $winningTeamID)->first();
 
             if (is_null($winTeam)) {
-                print($round);
+                print("null error");
+                print($round->id);
+                print(",");
+                print($winningTeamID);
+                print("\n");
                 continue;
             }
             $wins = $winTeam->TotalWins + 1;
